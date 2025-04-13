@@ -79,5 +79,4 @@ top_30_results = mopso.optimize()
 
 for i, (score, position) in enumerate(top_30_results, 1):
     formatted_position = [f"{p:.4f}" for p in position] 
-    #formatted_score = [f"{s:.4f}" for s in score]   
     print(f"Position #{i}: {formatted_position}, Score: {score}")
