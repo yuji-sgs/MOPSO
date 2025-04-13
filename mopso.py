@@ -66,8 +66,9 @@ class MOPSO:
     def evaluate(self, position):
         inputs = np.array([[position]]).reshape(1, -1)
         predicted = self.model(inputs)
-        obj1 = np.square(predicted[0][0].numpy() - target_w11_max).item()
-        obj2 = np.square(predicted[0][1].numpy() - target_BandGap1).item()
+        # 目的関数(2つ) 
+        obj1 = np.square(predicted[0][0].numpy() - target_1).item()
+        obj2 = np.square(predicted[0][1].numpy() - target_2).item()
         return [obj1, obj2]
 
     def is_better(self, objectives, best_objectives):
